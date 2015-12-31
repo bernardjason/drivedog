@@ -1,4 +1,4 @@
-# drivedog
+# drivedog, beta release!
 
 DriveDog is a project I started Nov 2015 to use the 15gb free storage on GoogleDrive in a similar fashion to DropBox from my Linux box. I wanted to copy files to a directory as a backup mechanism and they appear on GoogleDrive. I also wanted to be able to view them via GoogleDrive gui as and when for reference. Same way I can for Dropbox.
 
