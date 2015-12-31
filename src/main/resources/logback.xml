@@ -1,0 +1,24 @@
+<configuration  debug="false" scan="true">
+
+    <include file="../eclipseconsole.xml"/>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">ch.qos.logback.core.FileAppender">
+	<file>${log-file:-drivedog.log}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+        	<fileNamePattern>${log-file:-drivedog.log}.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <maxHistory>8</maxHistory>
+	</rollingPolicy>
+
+        <encoder>
+            <pattern>%date{HH:mm:ss} %-5level %logger{0} {%class %method} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>

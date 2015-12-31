@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<h1>DriveDog help</h1>
+<h2 id"whatIsDriveDog">What is DriveDog</h2>
+<p>
+This is a utility that will try to keep your google drive and Linux directory in sync. 
+Delete a file locally in $HOME/drivedog and DriveDog will move to the bin the file on google drive.<br>
+<b>limitation, DriveDog doesn't pick up files deleted on google drive, you will need to remove these yourself in $HOME/drivedog</b>
+</p>
+<h2 id="fullRun">Full run</h2>
+this option removes the marker file DriveDog uses to track changes. Removing this file will mean the next run will examine all 
+files for download rather than anything newer than last successful run
+<h2 id="conflicts1">Conflicts</h2>
+conflicts happen when both the local linux drive copy of a file in $HOME/drivedog has been edited and the same file on Google Drive has been edited. 
+DriveDog doesn't know which one to keep. 
+<h2 id="conflicts2">Resolve conflict, keep file copy on google drive</h2>
+remove the file on local storage and the conflict indicator file. For example<br>
+rm football.txt<br>
+rm .drivedog/.football.txt.conflict<br>
+<h2 id="conflicts3">Resolve conflict, keep local file edit on Linux</h2>
+Go to Google Drive and remove the file to the bin, then remove the conflict indicator, e.g.<br>
+rm .drivedog/.football.txt.conflict<br>
+<br>
+if you remove the file permanently then DriveDog will delete the file locally.
+<h2 id="delete">if DriveDog deletes a file</h2>
+the file deleted will be renamed/moved to the .drivedog directory, e.g.<br>
+file football.txt would be moved to .drivedog/football.txt
+<h2 id="renaming">renaming files on google</h2>
+DriveDog gets in a mess with this. The problem now is the file title's will be different but the unique identifier remains the same.<br>
+DriveDog gets in a mess with this!
+<h2 id="renaming">renaming files locally</h2>
+renaming a file locally (mv'ing) will result in the original file on Google being removed and a new file being created.
+<h2 id="duplicatenames">same filename but 2 instances on Google drive</h2>
+the way google drive works, there is nothing to stop 2 files or directories having the same name. They will have unique id's internally. 
+This will cause conflicts for DriveDog as unix filesystem doesn't support this
+</body>
+</html>
