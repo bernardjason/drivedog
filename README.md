@@ -8,13 +8,13 @@ Renaming files from GoogleDrive browser gui being reflected on Linux DriveDog di
 
 What DriveDog does is create a directory $HOME/drivedog that will mirror your My Drive on GoogleDrive. It will add an icon to the status bar that has options to
 
-*Do a full resync from GoogleDrive to Linux directory rather than changes since last run.
+* Do a full resync from GoogleDrive to Linux directory rather than changes since last run.
 	normally DriveDog uses a marker file called .drivedog_<hostname> to keep track of changes so that it can try and do the minimum work required. This option will remove this file so that DriveDog checks everything.
-*Pause DriveDog
+* Pause DriveDog
 	stop what its doing.
-*Display a list of recent changes
+* Display a list of recent changes
 	A popup gui showing recent pulls and pushes
-*Basic help
+* Basic help
 
 If running for the first time, run at the command line so that you can authorise on Google permission for DriveDog
 
@@ -26,14 +26,14 @@ you will get this like message
 
 use this link to grant permission for drivedog to upload and download files. This is the same granting as other applications wishing to use GoogleDrive must do.
 
-#Running after this
+##Running after this
 I copied target/scala-2.11/drivedog-assembly-0.1.jar to $HOME/bin
 
 Added this entry to my .bash_profile
 
 nohup java -jar $HOME/bin/drivedog-assembly-0.1.jar 
 
-#Building
+##Building
 
 sbt assembly
 
@@ -49,16 +49,16 @@ to run tests
 sbt test
 
 
-#File Conflicts
+##File Conflicts
 Conflicts happen when both the local linux drive copy of a file in $HOME/drivedog has been edited and the same file on Google Drive has been edited. DriveDog doesn't know which one to keep.
 
-##Resolve conflict, keep file copy on google drive
+###Resolve conflict, keep file copy on google drive
 
 remove the file on local storage and the conflict indicator file. For example
 rm football.txt
 rm .drivedog/.football.txt.conflict
 
-##Resolve conflict, keep local file edit on Linux
+###Resolve conflict, keep local file edit on Linux
 
 Go to Google Drive and remove the file to the bin, then remove the conflict indicator, e.g.
 rm .drivedog/.football.txt.conflict
