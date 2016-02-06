@@ -33,6 +33,10 @@ Added this entry to my .bash_profile
 
 nohup java -jar $HOME/bin/drivedog-assembly-0.1.jar 
 
+Also worth adding this to your environment to ignore hidden .drivedog files on file complete
+
+export FIGNORE=.drivedog
+
 ##Building
 
 sbt assembly
